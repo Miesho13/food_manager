@@ -1,46 +1,43 @@
 {
-   "foods": [
-       {
-            "name": "Makaron ze szpinakiem",
-            "type": "dish",
-            "kcal": 486,
-            "carbon": 61,
-            "proteins": 14,
-            "fat": 19,
-            "product": {
-                "Szpinak": 1,
-                "Makaron Tiagatele": 2,
-                "Śmietana 30%": 2,
-                "Suszone pomidory": 2
-            }
-       },
-       {
-            "name": "Baigiel sadzony",
-            "type": "dish",
-            "kcal": 494,
-            "carbon": 59,
-            "proteins": 17,
-            "fat": 21,
-            "product": {
-                "Rukola": "15g",
-                "Majonez": "10g",
-                "Masło": "5g",
-                "Bułka ziemniaczana": 1,
-                "Jajo ": 1,
-                "Awokado": "35g"
-            } 
-       },
-       {
-            "name": "Tibia",
-            "type": "dish",
-            "kcal": 52,
-            "carbon": 28,
-            "proteins": 14,
-            "fat": 14,
-            "product": {
-                "Peczatka": 1,
-                "Karniszon": 2
-            } 
-       }
-   ]
+  "dish": [
+    {
+      "name": "Makaron ze szpinakiem",
+      "kcal": 486,
+      "carbon": 61,
+      "proteins": 14,
+      "fat": 19,
+      "product": [
+        { "id": 1, "val": 1 },
+        { "id": 2, "val": 1 }
+      ]
+    },
+    {
+      "name": "Baigiel sadzony",
+      "kcal": 494,
+      "carbon": 59,
+      "proteins": 17,
+      "fat": 21,
+      "product": [
+        { "id": 1, "val": 1 },
+        { "id": 2, "val": 1 }
+      ]
+    },
+    {
+      "name": "Tibia",
+      "kcal": 52,
+      "carbon": 28,
+      "proteins": 14,
+      "fat": 14,
+      "product": [
+        { "id": 1, "val": 1 },
+        { "id": 2, "val": 1 }
+      ]
+    }
+  ],
+  "products": [
+    { "id": 1, "name": "Szpinak", "unit": "opk" },
+    { "id": 2, "name": "Śmietana 30%", "unit": "opk" },
+    { "id": 3, "name": "Makaron", "unit": "g" },
+    { "id": 4, "name": "Suszone pomidory w oleju", "unit": "opk" }
+  ]
 }
