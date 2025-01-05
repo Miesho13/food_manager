@@ -18,7 +18,6 @@ async function main() {
     update_ui_data();
 }
 
-
 function update_ui_data() {
     $("#food_list").empty();
     search_food.forEach(item => {
