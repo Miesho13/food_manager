@@ -1,0 +1,162 @@
+body {
+    font-family: 'Arial', sans-serif; 
+    background-color: #181818; 
+    color: #ffffff; 
+    font-family: 'Arial', sans-serif; 
+    margin: 20;
+    padding: 0;
+}
+
+a {
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #00bfff; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff; 
+}
+
+ul {
+    margin: 20px;
+    padding: 0;
+    list-style-type: none; 
+}
+
+ul li {
+    background-color: #1c1c1c;
+    border: 1px solid #333;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    color: #e0e0e0;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+ul li:hover {
+    background-color: #333333;
+    color: #ffffff;
+    transform: scale(1.02);
+}
+
+ul ul {
+    margin-left: 20px; /* Indent for nested lists */
+}
+
+ul ul li {
+    background-color: #252525;
+    border: 1px solid #444;
+}
+
+
+#lists_container {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-start; 
+    gap: 20px; 
+}
+
+#search_list, #chose_list {
+    flex: 1; 
+    max-width: 48%; 
+    padding: 10px; 
+    box-sizing: border-box; 
+}
+
+.animated-button {
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  border: none;
+  font-size: 16px;
+  background-color: inherit;
+  border-radius: 100px;
+  font-weight: 600;
+  color: #ffffff40;
+  box-shadow: 0 0 0 2px #ffffff20;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.animated-button span:last-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: #2196F3;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.animated-button span:first-child {
+  position: relative;
+  z-index: 1;
+}
+
+.animated-button:hover {
+  box-shadow: 0 0 0 5px #2195f360;
+  color: #ffffff;
+}
+
+.animated-button:active {
+  scale: 0.95;
+}
+
+.animated-button:hover span:last-child {
+  width: 150px;
+  height: 150px;
+  opacity: 1;
+}
+
+
+.button-group {
+  display: inline-flex; 
+  gap: 10px; 
+  margin: 20px;
+}
+
+.button-group button:hover {
+  background-color: #555; 
+}
+
+input {
+    background-color: #1c1c1c; 
+    color: #e0e0e0;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    width: 85%;
+    margin-left: 20px;
+    
+}
+
+input:hover {
+    background-color: #222222;
+    border-color: #444444;
+}
+
+input:focus {
+    background-color: #333333;
+    border-color: #007bff;
+    outline: none;
+    color: #ffffff;
+}
+
+#chose_list {
+    margin-top: 40px;
+}
+
