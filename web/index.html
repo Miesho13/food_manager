@@ -12,22 +12,19 @@
 <body>
     <h1>Food manager 🥑</h1>
 
-
+    
     <span class="button-group"> 
-        <button class="animated-button" id="get_list">get list</button> 
-        <button class="animated-button" id="get_list">Dodaj jedzonko</button> 
+        <button class="animated-button" id="get_list">Lista</button> 
+        <button class="animated-button" id="get_list" onclick="window.location.href='./add_dish.html';">Dodaj jedzonko</button> 
         <button class="animated-button" id="get_list">Dodaj produkt</button> 
     </span> 
     
-    
+    <div id="search_input">
+        <input placeholder="Szukaj jedzonka" class="input-field" type="text" id="search_box">
+    </div>
 
     <div id="lists_container">
-
         <div id="search_list">
-            <div>
-                <input placeholder="Szukaj jedzonka" class="input-field" type="text" id="search_box">
-            </div>
-
             <ul id="food_list" class="food_list"></ul>
         </div>
 
@@ -36,17 +33,32 @@
         </div>
     </div>
 
-    <div id="kcal_view"> </div>
     
-    <span>
-        <progress id="progress-bar" value="50" max="100"></progress>
-        <progress id="progress-bar" value="50" max="100"></progress>
-        <progress id="progress-bar" value="50" max="100"></progress>
-    </span>
 
-    <footer>
-        <p>&copy; 2024 Marcin Ryzewski</p>
+    <footer id="footer">
+        <span id="progress_group">
+            <div>
+                <progress id="progress_kcl" class="progress_bar" value="40" max="100"></progress>
+                <p id="kcal_g">kcal: </p>
+            </div>
+
+            <div>
+                <progress id="progress_protin" class="progress_bar" value="10" max="100"></progress>
+                <p id="protin_g">białko: </p>
+            </div>
+
+            <div>
+                <progress id="progress_fat" class="progress_bar" value="50" max="100"></progress>
+                <p id="fat_g">tłuszcz: </p>
+            </div>
+
+            <div>
+                <progress id="progress_carbon" class="progress_bar" value="20" max="100"></progress>
+                <p id="carbon_g">Węglowodany: </p>
+            </div>
+        </span>
     </footer>
+
     <script src="food.js"></script>
 </body>
 </html>

@@ -5,20 +5,41 @@
 
 var food_db = [];
 var search_food = [];
-
 var pick_food = [];
 
-var chosen = "Poniedzialek";
+function set_cookie(name, value, days) {
+    const expires = new Date();
+    expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000)); // Expiration in days
+    document.cookie = `${name}=${encodeURIComponent(JSON.stringify(value))}; expires=${expires.toUTCString()}; path=/`;
+}
+
+function get_cookie(name) {
+    const cookies = document.cookie.split("; ");
+    for (let cookie of cookies) {
+        let [key, value] = cookie.split("=");
+        if (key === name) {
+            return JSON.parse(decodeURIComponent(value));
+        }
+    }
+    return null; // Return null if cookie not found
+}
 
 async function main() {
     food_db = await loadJSON("./data/food.json");
     search_food = food_db.dish;
+    var save_pick = get_cookie("pick_food");
+    if (save_pick != null) {
+        pick_food = save_pick;
+    }
+
     console.log(food_db);
     setup_event_listeners();
     update_ui_data();
 }
 
 function update_ui_data() {
+    set_cookie("pick_food", pick_food, 1);
+
     $("#food_list").empty();
     search_food.forEach(item => {
         $('#food_list').append(`<li class="food_item">${item.name}</li>`);
@@ -28,14 +49,37 @@ function update_ui_data() {
     pick_food.forEach(item => {
         $('#pick_list').append(`<li class="food_item">${item.name}</li>`);
     });
-    
+    update_macros();
+}
+
+function update_macros() {
     var kcal = 0;
     pick_food.forEach(itm => {
         kcal += itm.kcal;
     });
+    $("#kcal_g").empty()
+    $("#kcal_g").append(`kcal: ${kcal}`);
 
-    $("#kcal_view").empty();
-    $("#kcal_view").append(`<p class="kcal_view">${kcal}</p>`);
+    var proteins = 0;
+    pick_food.forEach(itm => {
+        proteins += itm.proteins;
+    });
+    $("#protin_g").empty()
+    $("#protin_g").append(`białko: ${proteins}`);
+
+    var fat = 0;
+    pick_food.forEach(itm => {
+        fat += itm.proteins;
+    });
+    $("#fat_g").empty()
+    $("#fat_g").append(`fat: ${fat}`);
+
+    var carbon = 0;
+    pick_food.forEach(itm => {
+        carbon += itm.proteins;
+    });
+    $("#carbon_g").empty()
+    $("#carbon_g").append(`carbon: ${carbon}`);
 }
 
 async function loadJSON(url) {
@@ -50,6 +94,9 @@ async function loadJSON(url) {
         console.error('Error fetching data:', error)
     }
 }
+
+
+// HANDLE EVENT FUNCTION
 
 function setup_event_listeners() {
     $('#food_list').on('click', 'li', handle_food_item_click);
