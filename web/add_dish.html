@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/htmx.org@1.8.4"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <link rel= "stylesheet" href= "style.css">
+    <link rel= "stylesheet" href= "add_dish_style.css">
+</head>
+<body>
+    <h1>Food manager 🥑</h1>
+    
+    <span class="button-group"> 
+        <button class="animated-button" id="get_list">get list</button> 
+        <button class="animated-button" id="get_list">Dodaj jedzonko</button> 
+        <button class="animated-button" id="get_list">Dodaj produkt</button> 
+    </span> 
+    
+    <div id="input_container">
+        <input placeholder="Name"         class="input-field" type="text" id="Name">
+        <input placeholder="kcal"         class="input-field" type="text" id="kcal">
+        <input placeholder="Białko"       class="input-field" type="text" id="proteins">
+        <input placeholder="Tłuszcz"      class="input-field" type="text" id="fat">
+        <input placeholder="Wenglowodany" class="input-field" type="text" id="carbon">
+    </div>
+        
+
+    <div id = "input_products">
+        <input placeholder="Product name" class="input-field" type="text" id="product_search">
+        <div id="context_product">
+            <p>pec</p>
+            <p>pec</p>
+            <p>pec</p>
+            <p>pec</p>
+            <p>pec</p>
+            <p>pec</p>
+        </div>
+    </div>
+
+    <div id="products_list">
+        <ul id="search_list" class="food_list"></ul>
+        <ul id="product_list" class="food_list"></ul>
+    </div>
+
+    <script src="add_dish.js"></script>
+</body>
+</html>

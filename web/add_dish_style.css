@@ -1,0 +1,63 @@
+#input_container {
+    display: flex;
+    justify-content: center;
+    width: 100%; 
+    max-width: 1200px; 
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 50px auto;
+}
+
+#Name,
+#kcal,
+#proteins,
+#fat,
+#carbon {
+    flex: 1 1 200px; 
+    min-width: 50px;
+    max-width: 100px;
+}
+
+#input_products {
+    display: flex;
+    flex-direction: column;
+    align-items: cennter;
+    justify-content: center;
+    width: 100%; 
+    max-width: 1200px; 
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 50px auto;
+    position: relative;
+}
+
+#input_products input{
+    max-width: 200px;
+}
+
+#context_product {
+position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-width: 200px;
+    background: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none; /* Hidden by default */
+    z-index: 10;
+}
+
+#context_product div {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s ease-in-out;
+}
+
+#context_product div:hover {
+    background-color: #f0f0f0;
+}
